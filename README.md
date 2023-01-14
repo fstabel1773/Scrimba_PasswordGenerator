@@ -1,5 +1,5 @@
 # About this repo:
-This repo contains a solo project from Scrimba frontend career path module 3. It's a simple password generator, built from scratch in VS Code.
+This repo contains a solo project from Scrimba frontend career path module 3. It's a simple password generator, built from scratch in VS Code, implemented a figma design-pattern.
 
 
 ### cR9B46Sg

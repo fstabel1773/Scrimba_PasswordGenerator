@@ -1,3 +1,90 @@
+/* ==================
+    global default
+    ================ */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    font-family: "inter", sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #1C1C1C;
+}
+
+
+/* ==================
+    Typography
+    ================ */
+
+h1 {
+    margin: 0;
+    font-family: "karla", sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.subheading {
+    margin-top: 0.625em;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #D5D4D8;
+}
+
+.green {
+    color: #55F991;
+}
+
+
+/* ==================
+    Layout 
+    ================ */
+
+.container {
+    max-width: 550px;
+    background: #1F2937;
+    margin: 64px auto;
+    padding: 7.2em 3.25em;
+    box-shadow: 0 0 5px #10B981;
+}
+
+#pw-generator-btn {
+    margin-top: 3.2em;
+    padding: 0.5em 1em;
+    min-height: 3em;
+    background: #10B981;
+    line-height: 1.5;
+    color: inherit;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    border: none;
+}
+
+.divider {
+    margin-top: 2.2em;
+    border: 1px solid #2F3E53;
+}
+
+.pw-container {
+    margin-top: 2.44em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pw {
+    flex-basis: 13.2em;
+    text-align: center;
+    padding: 0.5em 1em;
+    min-height: 3em;
+    line-height: 2;
+    background: #273549;
+    border-radius: 6px;
 }
