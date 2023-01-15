@@ -62,7 +62,6 @@ h1 {
 #pw-generator-btn {
     margin-top: 3.2em;
     padding: 0.5em 1em;
-
     min-height: 3em;
     background: #10B981;
     line-height: 1.5;
@@ -73,7 +72,8 @@ h1 {
 }
 
 #pw-generator-btn:hover,
-.copy-btn:hover {
+.copy-btn:hover,
+.hide-btn:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -91,6 +91,7 @@ h1 {
 }
 
 .pw-area {
+    min-height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,6 +100,15 @@ h1 {
     line-height: 2;
     background: #273549;
     border-radius: 6px;
+}
+
+
+/* =================
+    utility
+   ================= */
+
+.mask {
+    -webkit-text-security: disc !important;
 }
 
 

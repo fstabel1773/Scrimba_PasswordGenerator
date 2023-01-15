@@ -5,6 +5,8 @@ document.addEventListener('click', (event) => {
         renderPw()
     } else if (event.target.classList.contains("copy-btn")) {
         copyPwToClipboard(event.target.parentElement.textContent.trim())
+    } else if (event.target.classList.contains("hide-btn")) {
+        event.target.previousElementSibling.classList.toggle("mask")
     }
 })
 
@@ -18,7 +20,9 @@ function renderPw() {
 
 function getPwHtml() {
     return `
-        <span class="pw-text">${generatePw()}</span><i class="fa-regular fa-copy copy-btn"></i>
+        <span class="pw-text mask" >${generatePw()}</span>
+        <i class="fa-regular fa-eye-slash hide-btn"></i>
+        <i class="fa-regular fa-copy copy-btn"></i>
     `
 }
 
