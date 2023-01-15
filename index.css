@@ -66,6 +66,11 @@ h1 {
     border: none;
 }
 
+#pw-generator-btn:hover {
+    cursor: pointer;
+    border: 0.25em solid #1C1C1C;
+}
+
 .divider {
     margin-top: 2.2em;
     border: 1px solid #2F3E53;
