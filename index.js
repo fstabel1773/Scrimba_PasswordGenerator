@@ -1,6 +1,6 @@
 import characters from "./data.js"
 
-document.addEventListener("click", (event) => {
+document.getElementById("pw-generator-btn").addEventListener("click", (event) => {
     renderPw()
 })
 
