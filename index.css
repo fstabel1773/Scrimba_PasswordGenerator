@@ -47,16 +47,22 @@ h1 {
     ================ */
 
 .container {
-    max-width: 550px;
+    width: 480px;
     background: #1F2937;
     margin: 64px auto;
     padding: 7.2em 3.25em;
     box-shadow: 0 0 5px #10B981;
 }
 
+#pw-generator-btn, 
+.pw-container {
+    width: 100%;
+} 
+
 #pw-generator-btn {
     margin-top: 3.2em;
     padding: 0.5em 1em;
+
     min-height: 3em;
     background: #10B981;
     line-height: 1.5;
@@ -80,20 +86,27 @@ h1 {
 .pw-container {
     margin-top: 2.44em;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    gap: 0.75em;
 }
 
 .pw-area {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-basis: 13.2em;
-    text-align: center;
+    justify-content: center;
+    gap: 1em;
     padding: 0.5em 1em;
-    min-height: 3em;
     line-height: 2;
     background: #273549;
     border-radius: 6px;
+}
+
+
+/* =================
+    Media queries 
+   ================= */
+
+@media (min-width: 650px) {
+
+   
 }
