@@ -66,9 +66,10 @@ h1 {
     border: none;
 }
 
-#pw-generator-btn:hover {
+#pw-generator-btn:hover,
+.copy-btn:hover {
     cursor: pointer;
-    border: 0.25em solid #1C1C1C;
+    transform: scale(1.2);
 }
 
 .divider {
@@ -84,7 +85,10 @@ h1 {
     gap: 10px;
 }
 
-.pw {
+.pw-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-basis: 13.2em;
     text-align: center;
     padding: 0.5em 1em;
