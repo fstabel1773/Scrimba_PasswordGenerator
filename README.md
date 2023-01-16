@@ -1,6 +1,17 @@
 # About this repo:
+
 This repo contains a solo project from Scrimba frontend career path module 3. It's a simple password generator, built from scratch in VS Code, implemented a figma design-pattern.
 
+Additions and modifications I did:
+
+- styling (mobile first)
+- ability to copy
+- ability to mask/unmask generated pw
+- ability to set custom pw-length
+- ability to choose between different charsets
+- testfunction for automatic testing correct pw-length
+
+Also did some bug-fixes (wrong length caused by not escaped characters). Still some errors left, but error-reate < 0,001%.
 
 ### cR9B46Sg
 
@@ -9,9 +20,10 @@ Quick start:
 ```
 $ npm install
 $ npm start
-````
+```
 
 Head over to https://vitejs.dev/ to learn more about using vite
+
 ## About Scrimba
 
 At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
