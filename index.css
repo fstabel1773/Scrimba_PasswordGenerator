@@ -71,16 +71,22 @@ h1 {
     width: 100%;
     padding: 0.75em 1em;
     display: flex;
+    flex-direction: column;
+    gap: 1em;
+    box-shadow: 0 0 5px #D5D4D8;
+}
+
+.pw-setting-length {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 5px #D5D4D8;
 }
 
 #pw-setting-length {
     width: 4rem;
     font-family: inherit;
     font-size: 1.1rem;
-    padding: 0.25em;
+    padding: 0.25em 0 0.1em 0.5em;
 }
 
 #pw-generator-btn, 
