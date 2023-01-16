@@ -1,4 +1,7 @@
 import characters from "./data.js"
+import testFunction from "./test.js"
+
+
 
 document.addEventListener('click', (event) => {
     if (event.target.id === "pw-generator-btn") {
@@ -20,7 +23,7 @@ function renderPw() {
 
 function getPwHtml() {
     return `
-        <span class="pw-text mask" >${generatePw()}</span>
+        <span class="pw-string mask" >${generatePw()}</span>
         <i class="fa-regular fa-eye-slash hide-btn"></i>
         <i class="fa-regular fa-copy copy-btn"></i>
     `
@@ -38,3 +41,8 @@ function generatePw() {
 function copyPwToClipboard(string) {
     navigator.clipboard.writeText(string)
 }
+
+
+
+// testing
+testFunction(100)
