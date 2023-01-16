@@ -34,6 +34,7 @@ function generatePw() {
     const pwArray = new Array(15).fill("0").map((char) => {
         return characters[Math.floor(Math.random() * characters.length)]
     })
+    console.log(pwArray.join(""))
     return pwArray.join("")
 }
 
@@ -45,4 +46,4 @@ function copyPwToClipboard(string) {
 
 
 // testing
-testFunction(100)
+testFunction(1000)
