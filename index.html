@@ -23,8 +23,18 @@
     <div class="container">
         <h1>Generate a <br> <span class="green">random password</span></h1>
         <p class="subheading" >Never use an insecure password again.</p>
-        <button id="pw-generator-btn">Generate passwords</button>
+
         <div class="divider"></div>
+        <form>
+            <div class="pw-settings">
+                <label for="pw-setting-length">Length of generated password: </label>
+                <input id="pw-setting-length" name= "pw-setting-length" type="number" value="15" required>
+            </div>
+                <input type="submit" id="pw-generator-btn" name="pw-generator-btn"" value="Generate passwords"></button>
+        </form>
+        <!-- <button id="pw-generator-btn">Generate passwords</button> -->
+        <div class="divider"></div>
+
         <div class="pw-container">
             <div class="pw-area green" id="pw-output-one"></div>
             <div class="pw-area green" id="pw-output-two"></div>
