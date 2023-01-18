@@ -28,6 +28,10 @@ h1 {
     letter-spacing: -0.025em;
 }
 
+p {
+    margin: 0;
+}
+
 .subheading {
     margin-top: 0.625em;
     margin-bottom: 0;
@@ -62,8 +66,9 @@ h1 {
 
 .pw-settings,
 #pw-setting-length,
-#pw-generator-btn,
-.pw-area {
+.btn,
+.pw-area,
+.warning-container  {
     border-radius: 6px;
 }
 
@@ -102,17 +107,23 @@ h1 {
     justify-content: space-between;
 }
 
+#pw-setting-length,
+#pw-generator-btn,
+#security-issue-decline-btn
+{
+    background-color: #10B981;
+}
+
 #pw-setting-length {
     width: 4rem;
     font-family: inherit;
     font-size: 1.1rem;
     padding: 0.25em 0 0.1em 0.5em;
-    background-color: #10B981;
     color: inherit;
     border: none;
 }
 
-#pw-generator-btn,
+.btn,
 .pw-area {
     padding: 0.5em 1em;
 }
@@ -122,18 +133,15 @@ h1 {
     width: 83%;
     margin: 3.2em auto 0 auto;
     min-height: 3em;
-    background: #10B981;
     line-height: 1.5;
-    color: inherit;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border: none;
 }
 
-#pw-generator-btn:hover,
 .copy-btn:hover,
-.hide-btn:hover {
+.hide-btn:hover,
+.btn:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .pw-container {
@@ -152,6 +160,40 @@ input[type="checkbox"] {
     justify-content: center;
     line-height: 2;
     background: #273549;
+}
+
+
+.warning-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 2em;
+    width: 400px;
+    height: fit-content;
+    border: 1px solid black;
+    background: #1C1C1C;
+    color:inherit;
+    border: 4px solid #c1121f;
+    box-shadow: 0 0 5px #c1121f;
+}
+
+.warning-container h1 {
+    color: #c1121f;
+}
+
+.btn {
+    margin-top: 1em;
+    width: 48%;
+    display: inline-block;
+    border: none;
+    color: inherit;
+}
+
+#security-issue-accept-btn {
+    background-color: #c1121f;
 }
 
 
