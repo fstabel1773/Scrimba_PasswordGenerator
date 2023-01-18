@@ -1,7 +1,30 @@
 import characters from "./data.js";
 import testFunction from "./test.js";
 
-const settingsForm = document.querySelector("form");
+let passwordLength = document.querySelector("#pw-setting-length").value;
+let passwordCharacterSet = Object.values(characters);
+
+// eventlistener modifying characterset corresponding to user settings in checkbox, not flattend
+document.addEventListener("change", (event) => {
+  Object.keys(characters).forEach((characterSubSet) => {
+    if (event.target.value === characterSubSet) {
+      if (!event.target.checked) {
+        passwordCharacterSet = passwordCharacterSet.filter(
+          (characterSubSet) =>
+            characterSubSet !== characters[event.target.value]
+        );
+      } else {
+        passwordCharacterSet.push(characters[event.target.value]);
+      }
+    }
+  });
+});
+
+document
+  .querySelector("#pw-setting-length")
+  .addEventListener("input", (event) => {
+    passwordLength = event.target.value;
+  });
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "pw-generator-btn") {
@@ -22,9 +45,7 @@ document.addEventListener("click", (event) => {
 });
 
 function securityCheck() {
-  const pwSettings = getPwSettings();
-  const { pwLength, charSetChoiceArray } = pwSettings;
-  if (pwLength >= 10 && charSetChoiceArray.length >= 3) {
+  if (passwordLength >= 10 && passwordCharacterSet.length >= 3) {
     return true;
   } else {
     document.getElementById("warning-wrapper").innerHTML =
@@ -50,39 +71,23 @@ function renderPw() {
 }
 
 function getPwHtml() {
-  const pwSettings = getPwSettings();
-  const passWord = generatePw(pwSettings);
+  const password = generatePw();
   return `
-        <span class="pw-string mask" >${passWord}</span>
+        <span class="pw-string mask" >${password}</span>
         <i class="fa-regular fa-eye-slash hide-btn"></i>
         <i class="fa-regular fa-copy copy-btn"></i>
     `;
 }
 
-function getPwSettings() {
-  const pwSettingsFormData = new FormData(settingsForm);
-  const pwLength = parseInt(pwSettingsFormData.get("pw-setting-length"));
-
-  let charSetChoiceArray = pwSettingsFormData.getAll("pw-setting-characters");
-  let pwCharSet = [];
-  charSetChoiceArray.forEach((charSetChoice) => {
-    return pwCharSet.push(characters[charSetChoice]);
-  });
-  pwCharSet = pwCharSet.flat();
-
-  return {
-    pwLength: pwLength,
-    pwCharSet: pwCharSet,
-    charSetChoiceArray: charSetChoiceArray,
-  };
-}
-
-function generatePw(pWSettingsObject) {
-  const { pwLength, pwCharSet } = pWSettingsObject;
-  const pwArray = new Array(pwLength).fill("0").map((char) => {
-    return pwCharSet[Math.floor(Math.random() * pwCharSet.length)];
-  });
-  return pwArray.join("");
+function generatePw() {
+  const passwordArray = new Array(parseInt(passwordLength))
+    .fill("0")
+    .map((character) => {
+      return passwordCharacterSet.flat()[
+        Math.floor(Math.random() * passwordCharacterSet.flat().length)
+      ];
+    });
+  return passwordArray.join("");
 }
 
 function copyPwToClipboard(string) {
