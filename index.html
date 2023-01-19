@@ -25,33 +25,30 @@
         <p class="subheading" >Never use an insecure password again.</p>
 
         <div class="divider"></div>
-        <form>
-            <div class="pw-settings">
-                <div class="pw-setting-length">
-                    <label for="pw-setting-length">Length of generated password: </label>
-                    <input id="pw-setting-length" name="pw-setting-length" type="number" value="15" required>
-                </div>
-                
-                <div class="pw-setting-checkbox">
-                    <input id="pw-setting-uppercase" name="pw-setting-characters" type="checkbox" value="uppercase" checked>
-                    <label for="pw-setting-uppercase">Uppercase ("A, B, C, ...") </label> 
-                </div>
-                <div class="pw-setting-checkbox">
-                    <input id="pw-setting-lowercase" name="pw-setting-characters" type="checkbox" value="lowercase" checked>
-                    <label for="pw-setting-lowercase">Lowercase ("a","b","c", ...) </label> 
-                </div>
-                <div class="pw-setting-checkbox">
-                    <input id="pw-setting-numbers" name="pw-setting-characters" type="checkbox" value="numbers" checked>
-                    <label for="pw-setting-numbers">Numbers ("0", "1", "2", ...) </label> 
-                </div>
-                <div class="pw-setting-checkbox">
-                    <input id="pw-setting-specials" name="pw-setting-characters" type="checkbox" value="specials" checked>
-                    <label for="pw-setting-specials">Special Characters ("~","`","!", ...") </label> 
-                </div>
-
+        <div class="pw-settings">
+            <div class="pw-setting-length">
+                <label for="pw-setting-length">Length of generated password: </label>
+                <input id="pw-setting-length" name="pw-setting-length" type="number" value="15" pattern="[0-9]{1}" required>
             </div>
-            <input type="submit" id="pw-generator-btn" class ="btn" name="pw-generator-btn"" value="Generate passwords"></button>
-        </form>
+            
+            <div class="pw-setting-checkbox">
+                <input id="pw-setting-uppercase" name="pw-setting-characters" type="checkbox" value="uppercase" checked>
+                <label for="pw-setting-uppercase">Uppercase ("A, B, C, ...") </label> 
+            </div>
+            <div class="pw-setting-checkbox">
+                <input id="pw-setting-lowercase" name="pw-setting-characters" type="checkbox" value="lowercase" checked>
+                <label for="pw-setting-lowercase">Lowercase ("a","b","c", ...) </label> 
+            </div>
+            <div class="pw-setting-checkbox">
+                <input id="pw-setting-numbers" name="pw-setting-characters" type="checkbox" value="numbers" checked>
+                <label for="pw-setting-numbers">Numbers ("0", "1", "2", ...) </label> 
+            </div>
+            <div class="pw-setting-checkbox">
+                <input id="pw-setting-specials" name="pw-setting-characters" type="checkbox" value="specials" checked>
+                <label for="pw-setting-specials">Special Characters ("~","`","!", ...") </label> 
+            </div>
+        </div>
+        <button id="pw-generator-btn" class="btn">Generate passwords</button>
         <!-- <button id="pw-generator-btn">Generate passwords</button> -->
         <div class="divider"></div>
 
