@@ -4,20 +4,8 @@ import testFunction from "./test.js";
 let passwordLength = document.querySelector("#pw-setting-length").value;
 let passwordCharacterSet = Object.values(characters);
 
-// eventlistener modifying characterset corresponding to user settings in checkbox, not flattend
 document.addEventListener("change", (event) => {
-  Object.keys(characters).forEach((characterSubSet) => {
-    if (event.target.value === characterSubSet) {
-      if (!event.target.checked) {
-        passwordCharacterSet = passwordCharacterSet.filter(
-          (characterSubSet) =>
-            characterSubSet !== characters[event.target.value]
-        );
-      } else {
-        passwordCharacterSet.push(characters[event.target.value]);
-      }
-    }
-  });
+  setCharacterSet(event);
 });
 
 document
@@ -43,6 +31,21 @@ document.addEventListener("click", (event) => {
     event.target.previousElementSibling.classList.toggle("mask");
   }
 });
+
+function setCharacterSet(event) {
+  Object.keys(characters).forEach((characterSubSet) => {
+    if (event.target.value === characterSubSet) {
+      if (!event.target.checked) {
+        passwordCharacterSet = passwordCharacterSet.filter(
+          (characterSubSet) =>
+            characterSubSet !== characters[event.target.value]
+        );
+      } else {
+        passwordCharacterSet.push(characters[event.target.value]);
+      }
+    }
+  });
+}
 
 function securityCheck() {
   if (passwordLength >= 10 && passwordCharacterSet.length >= 3) {
